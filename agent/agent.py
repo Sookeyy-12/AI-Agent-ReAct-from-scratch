@@ -7,7 +7,7 @@ class Agent:
         if self.system is not None:
             self.messages.append({"role": "system", "content": self.system})
 
-    def __call__(self, message):
+    def __call__(self, message=""):
         if message:
             self.messages.append({"role": "user", "content": message})
         
