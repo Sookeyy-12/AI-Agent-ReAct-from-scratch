@@ -1,0 +1,84 @@
+# Roadmap: Building a Software Agent from Scratch
+
+This guide provides a step-by-step roadmap for building a software agent without relying on existing frameworks like LangChain or Google ADK. It's designed for developers who want to understand the core concepts and build their own custom agent architecture.
+
+## Phase 1: The Core Engine
+
+This phase focuses on building the fundamental components of the agent.
+
+### 1.1. Understanding the Core Loop
+
+The heart of an agent is its core loop, which is responsible for processing input, making decisions, and taking actions.
+
+- **Concept:** The agent's loop is a continuous cycle of `Sense -> Think -> Act`.
+  - **Sense:** The agent perceives its environment, which can be user input, sensor data, or information from other systems.
+  - **Think:** The agent processes the information, reasons about it, and decides what to do next. This is where the Large Language Model (LLM) comes in.
+  - **Act:** The agent performs an action, such as calling a tool, responding to the user, or modifying its internal state.
+- **Tutorial:** [Build your own ReAct Agent from Scratch](https://www.youtube.com/watch?v=hKVhRA9kfeM)
+
+### 1.2. Interacting with Large Language Models (LLMs)
+
+Your agent will need to communicate with an LLM to perform its "thinking" process.
+
+- **Key Concepts:**
+  - **API Integration:** Learn how to make API calls to your chosen LLM (e.g., Gemini, OpenAI, a local model).
+  - **Prompt Engineering:** The quality of your prompts is crucial for getting good results from the LLM. Learn how to structure prompts effectively.
+- **Resources:**
+  - **Gemini API:** [https://ai.google.dev/docs/gemini_api_overview](https://ai.google.dev/docs/gemini_api_overview)
+  - **OpenAI API:** [https://beta.openai.com/docs/](https://beta.openai.com/docs/)
+
+## Phase 2: Tool Integration
+
+To be useful, your agent needs to interact with the outside world. This is done through "tools."
+
+### 2.1. What are Tools?
+
+Tools are functions or APIs that the agent can call to perform actions. Examples include:
+
+- Searching the web
+- Reading and writing files
+- Interacting with a database
+- Calling a specific API
+
+### 2.2. Implementing Tool Use
+
+- **Concept:** You'll need a mechanism for the LLM to signal that it wants to use a tool and with what arguments. This is often done by having the LLM generate a specific JSON format or function call.
+- **Tutorial:** [Function Calling with Gemini](https://www.youtube.com/watch?v=pb3v5k_z3_c)
+
+## Phase 3: Memory
+
+An agent's ability to remember past interactions is essential for maintaining context and performing complex tasks.
+
+### 3.1. Short-Term Memory
+
+- **Concept:** This is the context of the current conversation. It's usually a list of the messages exchanged between the user and the agent.
+- **Implementation:** You'll need to pass the conversation history with each call to the LLM.
+
+### 3.2. Long-Term Memory
+
+- **Concept:** This allows the agent to remember information across multiple sessions.
+- **Implementation:**
+  - **Vector Databases:** A common approach is to use a vector database (e.g., Pinecone, Chroma) to store and retrieve information.
+  - **Tutorial:** [Vector Databases for Beginners](https://www.youtube.com/watch?v=Y_A5i3gLP1s)
+
+## Phase 4: Advanced Topics
+
+Once you have the basics down, you can explore more advanced concepts.
+
+### 4.1. Planning and Reasoning
+
+- **Concept:** For complex, multi-step tasks, the agent needs to be able to create a plan and execute it.
+- **Techniques:**
+  - **ReAct (Reason + Act):** A popular technique where the agent verbalizes its reasoning before taking an action.
+  - **Chain of Thought (CoT):** Encouraging the LLM to "think step by step" to improve its reasoning.
+- **Resource:** [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+
+### 4.2. Self-Correction
+
+- **Concept:** The ability for the agent to recognize when it has made a mistake and correct itself.
+- **Implementation:** This is an active area of research, but one approach is to have the agent review its own output and a "critic" LLM provide feedback.
+
+## Example Projects & Further Reading
+
+- **Build a Simple AI Agent in Python:** [https://www.youtube.com/watch?v=Xz-4Gq_4y4M](https://www.youtube.com/watch?v=Xz-4Gq_4y4M)
+- **Awesome Agents:** [https://github.com/e2b-dev/awesome-agents](https://github.com/e2b-dev/awesome-agents) - A curated list of agent-related resources.
