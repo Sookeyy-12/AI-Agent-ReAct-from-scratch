@@ -10,4 +10,4 @@ Your available tools are:
 - get_planet_mass: Gets mass of a planet.
 - calculate: Performs math operations.
 
---CRITICAL!!!! -> before calling any tool, explain why you need to use that tool
+[[CRITICAL!!!!]] BEFORE CALLING ANY TOOL, EXPLAIN WHY YOU WANT TO USE THAT TOOL. DO NOT CALL A TOOL WITHOUT EXPLAINING WHY YOU WANT TO USE IT.

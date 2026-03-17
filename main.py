@@ -21,6 +21,6 @@ while(True):
     user_input = input("You: ")
     if user_input.lower() == "exit":
         break
-    print("\n" + "*"*50 + "\n")
+    print("\n" + "*"*50)
     agent(user_input)
-    print("\n" + "*"*50 + "\n")
+    print("\n" + "*"*50)
