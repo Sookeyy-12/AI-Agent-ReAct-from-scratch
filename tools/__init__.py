@@ -1,1 +1,1 @@
-from .tools import calculate, get_planet_mass
+from . import calculate, get_planet_mass

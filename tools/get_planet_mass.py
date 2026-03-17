@@ -1,4 +1,4 @@
-def get_planet_mass(planet) -> float:
+def tool(planet) -> float:
     planet = planet.lower()
     if planet == "earth":
         return 5.972e24
@@ -17,3 +17,18 @@ def get_planet_mass(planet) -> float:
     if planet == "venus":
         return 4.867e24
     return 0.0
+
+definition = {
+    "name": "get_planet_mass",
+    "description": "Gets mass of a planet",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "planet": {
+                "type": "string",
+                "description": "Planet name (e.g., 'Earth')",
+            },
+        },
+        "required": ["planet"],
+    },
+}
