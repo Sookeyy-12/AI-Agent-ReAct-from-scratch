@@ -22,7 +22,7 @@ class Agent:
 
     def __call__(self, message=""):
         if message:
-            self.messages.append({"role": "user", "parts": [{"text": message}]})
+            self.messages.append(types.Content(role="user", parts=[types.Part.from_text(text=message)]))
         
         return self.execute()
 

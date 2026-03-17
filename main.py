@@ -2,6 +2,7 @@ from agent import Agent
 from google import genai
 from tools import get_planet_mass, calculate
 
+
 system_prompt = open("system_prompt_2.txt", "r").read().strip()
 
 client = genai.Client(
